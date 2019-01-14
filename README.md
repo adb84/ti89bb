@@ -1,4 +1,4 @@
-# Blues Brothers PC game ported for ti89 calculator
+# Blues Brothers PC game for ti89 calculator
 
 Watch the video: https://youtu.be/AL6j5n8Y9Ec
  
