@@ -2,7 +2,7 @@
 
 Watch the video:
 
-See install instruction into "install" directory
+See (./install/Install.md) into "install" directory
 
 # Controls
 ESC : quit the game
