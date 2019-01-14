@@ -4,7 +4,7 @@ Watch the video: https://youtu.be/AL6j5n8Y9Ec
  
 
 # Installation
-See [Installation instructions](./install/README.md) into [install](./install) directory
+See [Installation instructions](./install) into [install](./install) directory
  
 # Controls
 **ESC** : quit the game
