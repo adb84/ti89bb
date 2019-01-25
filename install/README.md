@@ -1,17 +1,21 @@
 # Installation instructions
 
-**Step 1)** If you are using ti89 Titanium, go directly to step 2 !
+**Step 1)** If you are using ti89 Titanium, go directly to step 2!
  
-If you are using Hardware 2 Ti89, it is mandatory to install **superstart** (otherwise you will get the famous "ASAP or Exec string too long" due to the large size of the program)
+If you are using Hardware 2 Ti89, it is mandatory to **install superstart** (otherwise you will get the famous "ASAP or Exec string too long" due to the large size of the program)
  
-->  just send "**sstart.89K**" to the calculator (autoinstall)
-
-**Step 2)** The Blues Brothers game is composed of two files: you have to copy both files to the calculator**
+->  just send **"sstart.89K"** to the calculator
  
-"**Blues.89z**" (the main program)
+  
+  
+**Step 2)** The Blues Brothers game is composed of two files: you have to **copy both files to the calculator**
  
-"**level01.89y**" (contains all sprites of the game)
+**"Blues.89z"** (the main program)
  
+**"level01.89y"** (contains all sprites of the game)
+ 
+  
+  
 **Step 3)** Just type "blues()" and the game starts.**
  
 # Controls
