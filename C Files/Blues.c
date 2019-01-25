@@ -30,13 +30,13 @@
   short antirebond2 = 0;
   short antirebond3 = 0;//prevent launch right after holding a box
   short antirebond4 = 0;//for debug
-  short enum_seq[6]={0,1,3,0,1,2};//normal tile sequence for mode 1 (walking)
-  short enum_seq_box[6]={13,15,13,15,13,15};//special tile sequence for mode 1 (walking while holding a box)
-  short enum_seq2[4]={8,8,9,9};//tile sequence for mode 2 (climbing)
-  short enum_seq3[6]={16,10,10,8,4,2};//offset sequence for mode 3 (jumping) and mode 4 (falling)
-  short enum_seq6[4]={5,5,6,6};//tile sequence for mode 6 (crawling)
-  short enum_seq8[39]={19,19,19,30,30,30,31,31,31,32,32,32,27,27,27,28,28,28,29,29,29,27,27,27,28,28,28,29,29,29,27,27,27,28,28,28,29,29,29};//tile sequence for mode 8 (bumped)  
-  short enum_seq9[80]={34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38,34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38,34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38,34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38};//tile sequence for mode 9 (dance)  
+  const short enum_seq[6]={0,1,3,0,1,2};//normal tile sequence for mode 1 (walking)
+  const short enum_seq_box[6]={13,15,13,15,13,15};//special tile sequence for mode 1 (walking while holding a box)
+  const short enum_seq2[4]={8,8,9,9};//tile sequence for mode 2 (climbing)
+  const short enum_seq3[6]={16,10,10,8,4,2};//offset sequence for mode 3 (jumping) and mode 4 (falling)
+  const short enum_seq6[4]={5,5,6,6};//tile sequence for mode 6 (crawling)
+  const short enum_seq8[39]={19,19,19,30,30,30,31,31,31,32,32,32,27,27,27,28,28,28,29,29,29,27,27,27,28,28,28,29,29,29,27,27,27,28,28,28,29,29,29};//tile sequence for mode 8 (bumped)
+  const short enum_seq9[80]={34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38,34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38,34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38,34,34,34,34,35,35,35,35,36,36,36,36,37,37,37,37,38,38,38,38};//tile sequence for mode 9 (dance)
   short stop = 0;//stop =1 to quit
   short mode = 0;
    /* Modes :
@@ -94,14 +94,14 @@
   short y_bullet[]       ={0    , 0    , 0     , 0     , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0      , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    };//bullet y position
   short dying_seq[]      ={0    , 0    , 0     , 0     , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0      , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    , 0    };//dying seq  
   short dying_tile[] ={0,0,2,29,15,18,9};//dying tile (Grandma(tile0) Fish(not dying)Cop(tile 2) Woman(tile29) Junky(tile) Farmer (tile) Bird (tile)
-  short enum_seq_enemy[] ={0,0,1,1};//Grandma
-  short enum_seq_enemy3[] ={2,3,4,5,4,3};//Cop walking
-  short enum_seq_enemy4[] ={24,25,26,27,26,25};//Woman walking
-  short enum_seq_enemy5[] ={15,14,16,32,16,14};//Junky walking
-  short enum_seq_enemy6[] ={18,17,19,20,19,17};//Farmer walking
-  short enum_seq_enemy7[] ={9,11,10,11};//Bird flying
-  short x_enum_dying_seq[]={6,12,18,24,30,36,42,48,54,60,66,72,78,84};
-  short y_enum_dying_seq[]={-10,-19,-26,-30,-32,-30,-26,-19,-10,0,10,19,26,30};
+  const short enum_seq_enemy[] ={0,0,1,1};//Grandma
+  const short enum_seq_enemy3[] ={2,3,4,5,4,3};//Cop walking
+  const short enum_seq_enemy4[] ={24,25,26,27,26,25};//Woman walking
+  const short enum_seq_enemy5[] ={15,14,16,32,16,14};//Junky walking
+  const short enum_seq_enemy6[] ={18,17,19,20,19,17};//Farmer walking
+  const short enum_seq_enemy7[] ={9,11,10,11};//Bird flying
+  const short x_enum_dying_seq[]={6,12,18,24,30,36,42,48,54,60,66,72,78,84};
+  const short y_enum_dying_seq[]={-10,-19,-26,-30,-32,-30,-26,-19,-10,0,10,19,26,30};
 
   short curtain = 0; //0: disabled  1-6: positions
   short m_curtain = 0; //mode 0:close 1:open
@@ -117,17 +117,17 @@
   short y_special_pos[] = { 70*16-16,    81*16,  40*16,  33*16,  48*16,   54*16,   54*16,   54*16,   34*16,    18*16,    13*16,     7*16,    68*16,    69*16,    69*16};//y position
   short c_special_pos[] = {        1,        2,      3,      4,      5,       6,       6,       6,       6,        7,        7,        7,        8,        8,        8};//switch case value (0: disabled)
   
-  short g_animated_tile_pos[]       = {  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  3,  2,  3,  2,  3,  2,  3,  4,  4,  5,  6,  7,  7,  7,  7,  7,  6,  6,  6,  6,  6,  7,  7,  7,  7};//group (1:camera/2:right axe/3:left axe/4:flag/5:guitar/6:Right moving walkway/7:Left moving walkway)
-  short x_animated_tile_pos[]       = { 25, 94, 57, 87, 72, 45, 60, 29, 85, 86, 89, 86, 89, 84, 83, 80, 84,116,125, 94, 85, 84, 85, 86, 87, 88, 81, 82, 83, 84, 85, 85, 86, 87, 88};//x position
-  short y_animated_tile_pos[]       = { 64, 55, 55, 26, 26, 26, 26, 28, 64, 36, 39, 42, 45, 36, 39, 42, 45, 69, 70, 81, 36, 39, 39, 39, 39, 39, 42, 42, 42, 42, 42, 45, 45, 45, 45};//y position
+  const short g_animated_tile_pos[]       = {  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  3,  2,  3,  2,  3,  2,  3,  4,  4,  5,  6,  7,  7,  7,  7,  7,  6,  6,  6,  6,  6,  7,  7,  7,  7};//group (1:camera/2:right axe/3:left axe/4:flag/5:guitar/6:Right moving walkway/7:Left moving walkway)
+  const short x_animated_tile_pos[]       = { 25, 94, 57, 87, 72, 45, 60, 29, 85, 86, 89, 86, 89, 84, 83, 80, 84,116,125, 94, 85, 84, 85, 86, 87, 88, 81, 82, 83, 84, 85, 85, 86, 87, 88};//x position
+  const short y_animated_tile_pos[]       = { 64, 55, 55, 26, 26, 26, 26, 28, 64, 36, 39, 42, 45, 36, 39, 42, 45, 69, 70, 81, 36, 39, 39, 39, 39, 39, 42, 42, 42, 42, 42, 45, 45, 45, 45};//y position
   short s_animated_tile_pos[]       = {  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0};//current position in animation sequence
-  short seq_animated_tile_group1[]  = {184,184,184,185,185,185,186,186,186,185,185,185};
-  short seq_animated_tile_group2[]  = {253,252,251};
-  short seq_animated_tile_group3[]  = {240,241,242};
-  short seq_animated_tile_group4[]  = {158,174};
-  short seq_animated_tile_group5[]  = {159,165};
-  short seq_animated_tile_group6[]  = {248,249,250};
-  short seq_animated_tile_group7[]  = {239,238,237};
+  const short seq_animated_tile_group1[]  = {184,184,184,185,185,185,186,186,186,185,185,185};
+  const short seq_animated_tile_group2[]  = {253,252,251};
+  const short seq_animated_tile_group3[]  = {240,241,242};
+  const short seq_animated_tile_group4[]  = {158,174};
+  const short seq_animated_tile_group5[]  = {159,165};
+  const short seq_animated_tile_group6[]  = {248,249,250};
+  const short seq_animated_tile_group7[]  = {239,238,237};
   
   short x_swimm_speed = 0;
   short y_swimm_speed = 0;
@@ -163,12 +163,12 @@
   Plane bg_plane;
 
 
-void reset_variables (void) {
+static void reset_variables (void) {
 
   //place new items:
-  unsigned short a_val[] = {70,70,70,70,62,47,50,50, 70, 70, 70, 15, 15, 15,31, 7, 7, 8, 8,40,40,40,50,45,45,48, 70,33,41	, 18, 19, 13, 14,  7,  8, 34, 35, 54, 55, 54, 55, 54, 55};
-  unsigned short b_val[] = {22,23,24,48,89,47,64,65,114,115,116,101,102,103,82,54,55,18,19,22,23,24,98,97,98,24,100,63,47	, 17, 17, 12, 12, 10, 10, 32, 32, 23, 23, 24, 24, 25, 25};
-  unsigned short c_val[] = {19,19,19,19,19,19,19,19, 19, 19, 19, 19, 19, 19,19,19,19,19,19,19,19,19,19,19,19,71, 71,71,18	,153,154,153,154,153,154,155,156,155,156,155,156,155,156};
+  static const unsigned short a_val[] = {70,70,70,70,62,47,50,50, 70, 70, 70, 15, 15, 15,31, 7, 7, 8, 8,40,40,40,50,45,45,48, 70,33,41, 18, 19, 13, 14,  7,  8, 34, 35, 54, 55, 54, 55, 54, 55};
+  static const unsigned short b_val[] = {22,23,24,48,89,47,64,65,114,115,116,101,102,103,82,54,55,18,19,22,23,24,98,97,98,24,100,63,47, 17, 17, 12, 12, 10, 10, 32, 32, 23, 23, 24, 24, 25, 25};
+  static const unsigned short c_val[] = {19,19,19,19,19,19,19,19, 19, 19, 19, 19, 19, 19,19,19,19,19,19,19,19,19,19,19,19,71, 71,71,18,153,154,153,154,153,154,155,156,155,156,155,156,155,156};
   for (n=0;n<43;n++) {
   	bg_map[a_val[n]][b_val[n]]=c_val[n];
   }
@@ -198,9 +198,9 @@ void reset_variables (void) {
 	box_speed =12;
 	blink_item = 0;
 
-  short init_x_enemy[] = {47*16, 73*16, 65*16 , 46*16 , 68*16, 29*16, 89*16, 23*16, 97*16, 83*16,  8*16,101*16+8, 22*16, 62*16, 52*16,  5*16, 70*16, 68*16, 56*16, 37*16, 23*16, 59*16};
-  short init_y_enemy[] = {69*16, 69*16, 61*16 , 34*16 , 34*16, 69*16, 69*16, 61*16, 32*16, 21*16, 39*16,   49*16, 81*16, 81*16, 61*16, 30*16, 49*16, 46*16, 21*16, 21*16,  5*16,  3*16};
-  short init_m_enemy[] = {1    , 1    , 1     , 1     , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1      , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1    };
+  static const short init_x_enemy[] = {47*16, 73*16, 65*16 , 46*16 , 68*16, 29*16, 89*16, 23*16, 97*16, 83*16,  8*16,101*16+8, 22*16, 62*16, 52*16,  5*16, 70*16, 68*16, 56*16, 37*16, 23*16, 59*16};
+  static const short init_y_enemy[] = {69*16, 69*16, 61*16 , 34*16 , 34*16, 69*16, 69*16, 61*16, 32*16, 21*16, 39*16,   49*16, 81*16, 81*16, 61*16, 30*16, 49*16, 46*16, 21*16, 21*16,  5*16,  3*16};
+  static const short init_m_enemy[] = {1    , 1    , 1     , 1     , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1      , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1    , 1    };
 
   for (n=0;n<nb_enemy;n++) {
 		  x_enemy[n] = init_x_enemy[n];
@@ -214,7 +214,7 @@ void reset_variables (void) {
 		  dying_seq[n]=0;
   }
   
-	short init_c_special_pos[] = {        1,        2,      3,      4,      5,       6,       6,       6,       6,        7,        7,        7,        8,        8};//switch case value
+	static const short init_c_special_pos[] = {        1,        2,      3,      4,      5,       6,       6,       6,       6,        7,        7,        7,        8,        8};//switch case value
   for (n=0;n<14;n++)
   		c_special_pos[n]=init_c_special_pos[n];
   		
@@ -242,11 +242,11 @@ void reset_variables (void) {
 	levelcomplete=0;
 }
 
-unsigned short test_bg_map (short x, short y) {
+static unsigned short test_bg_map (short x, short y) {
 	return bg_map[(y_bg/16)+((y_pos+y)/16)][(x_bg/16)+((x_pos+x)/16)];
 }
 
-void add_one_disk (void) {
+static void add_one_disk (void) {
 				    disque_u++;
 						if (disque_u>9) {
 						disque_u=0;
@@ -258,30 +258,31 @@ void add_one_disk (void) {
 						}
 }
 
-void test_disque (unsigned short x, unsigned short y) {
-				nb3=test_bg_map(x,y);
+static void test_disque (unsigned short x, unsigned short y) {
+	unsigned char * bg_map_ptr = &bg_map[(y_bg/16)+((y_pos+y)/16)][(x_bg/16)+((x_pos+x)/16)];
+				nb3=*bg_map_ptr;
 				if (nb3==208) {//disk (dark background)
-						bg_map[(y_bg/16)+((y_pos+y)/16)][(x_bg/16)+((x_pos+x)/16)]=20;	
-				    bg_plane.force_update=1;
+						*bg_map_ptr=20;
 				    add_one_disk();
-				}
-				if (nb3==188) {//disk (light background)
-						bg_map[(y_bg/16)+((y_pos+y)/16)][(x_bg/16)+((x_pos+x)/16)]=0;	
 				    bg_plane.force_update=1;
+				}
+				else if (nb3==188) {//disk (light background)
+						*bg_map_ptr=0;
 						add_one_disk();
-				}
-				if (nb3==129) {//broken disk
-						bg_map[(y_bg/16)+((y_pos+y)/16)][(x_bg/16)+((x_pos+x)/16)]=0;	
 				    bg_plane.force_update=1;
+				}
+				else if (nb3==129) {//broken disk
+						*bg_map_ptr=0;
 				    disque_d--;
 				    if (disque_d<0) {
 				    		disque_d=0;
 				    		disque_u=0;
 				    }
+				    bg_plane.force_update=1;
 				}
 }
 
-unsigned short test_elevator(short i) {
+static unsigned short test_elevator(short i) {
   	if ((y_bg+y_pos+32==y_elevator[i])&&(x_bg+x_pos+16>=x_elevator[i])&&(x_bg+x_pos<=x_elevator[i]+32-12)) {//test elevator
 						if ((s_elevator[i]==3)&& (elevator_delay[i]==0))
 								y_pos+=v_elevator[i];
@@ -299,7 +300,7 @@ short une_image(void) {
   if _keytest_optimized(RR_ESC)
     	stop=1;//quit game
   
- if (DEBUG) {  	
+ if (DEBUG) {
 				  if(_keytest_optimized(RR_8) && y_bg>16) //bg up
 				      y_bg-=16;
 				  if(_keytest_optimized(RR_2) && y_bg<HAUT*16-HEIGHT) //bg down
@@ -318,7 +319,7 @@ short une_image(void) {
 								if (showtiles==0)
 										showtiles=1;
 								else
-										showtiles=0;			
+										showtiles=0;
 									}
 				 if (!(_keytest_optimized(RR_DIVIDE)) && !(_keytest_optimized(RR_MULTIPLY)) && !(_keytest_optimized(RR_5))) {
 				 	antirebond2=0;
@@ -380,14 +381,16 @@ case 0: // stopped
 				a=22;
 				
 			nb=test_bg_map(a,32);
-			if ((nb==251) || (nb==252)|| (nb==253)|| (nb==248)|| (nb==249)|| (nb==250)) {//Moving walkway test
+			//if ((nb==251) || (nb==252)|| (nb==253)|| (nb==248)|| (nb==249)|| (nb==250)) {//Moving walkway test
+			if ((nb>=248) && (nb<=253)) {//Moving walkway test
 					x_pos+=4;
 					if (prop[test_bg_map(a,32)]==0) {
 						j=11;
 						mode=4;
 					} 
 			}
-			if ((nb==240) || (nb==241) || (nb==242) || (nb==237) || (nb==238) || (nb==239)) {//Moving walkway test
+			//if ((nb==240) || (nb==241) || (nb==242) || (nb==237) || (nb==238) || (nb==239)) {//Moving walkway test
+			if ((nb>=237) && (nb<=242)) {//Moving walkway test
 					x_pos-=4;
 					if (prop[test_bg_map(a,32)]==0) {
 						j=11;
@@ -423,12 +426,12 @@ case 0: // stopped
 
 				if (hold_object==0)//hold nothing
 						j=1;
-				if (hold_object==1){//hold box
+				else if (hold_object==1){//hold box
 						j=14;
 						x_box=x_bg+x_pos+8;
 						y_box=y_bg+y_pos-12;
 				}
-				if (hold_object==2)
+				else if (hold_object==2)
 						j=14;
 				if (_keytest_optimized(RR_SHIFT) && (hold_object ==2)) {
 						animate_umbrella=32;
@@ -486,12 +489,12 @@ case 1: //walking
 					
 					if (hold_object==0)
 							j=enum_seq[seq];
-					if (hold_object==1) {
+					else if (hold_object==1) {
 							j=enum_seq_box[seq];
 							x_box=x_bg+x_pos+16 ;
 							y_box=y_bg+y_pos-12;
 					}
-					if (hold_object==2)
+					else if (hold_object==2)
 							j=enum_seq_box[seq];
 							
 					nb  =test_bg_map(32,0);  //Wall test (up)
@@ -521,12 +524,12 @@ case 1: //walking
 					
 					if (hold_object==0)
 							j=enum_seq[seq];
-					if (hold_object==1) {
+					else if (hold_object==1) {
 							j=enum_seq_box[seq];
 							x_box=x_bg+x_pos;
 							y_box=y_bg+y_pos-12;
 					}
-					if (hold_object==2)
+					else if (hold_object==2)
 							j=enum_seq_box[seq];
 					
 					nb  =test_bg_map(0,0);  // //Wall test (up)
@@ -594,7 +597,7 @@ case 2: //climbing
   	
   		nb=test_bg_map(16,0);//end of ladder test (up)
 			nb2=test_bg_map(16,28);//end of ladder test
-		  if (prop[nb]!=1 && ((nb2==135)||(nb2==234)||(nb2==235))) {	  	
+		  if (prop[nb]!=1 && ((nb2==135)||(nb2==234)||(nb2==235))) {
 		
 		  		y_pos-=pas/2;
 					seq2++;
@@ -612,7 +615,7 @@ case 2: //climbing
   	
    		nb=test_bg_map(16,32+(y_bg%16));//Floor test
    		nb2=test_bg_map(16,16);//type of ladder test (under water or not)
-		  if (prop[nb]!=1) {	  	
+		  if (prop[nb]!=1) {
 
 		  	  y_pos+=pas/2;
 					seq2++;
@@ -701,14 +704,14 @@ case 3: // Jump
 										mode=8;//Bumped
 	    	    				break;
 		     				}
-		     		nb=test_bg_map(16,0);//Ceiling test (normal case)		
+		     		nb=test_bg_map(16,0);//Ceiling test (normal case)
 		     				if (((prop[nb]==1) && (nb !=135))) {
 										mode=4;//Fall mode to avoid Ceiling
 										seq3--;
 	    	    				break;
 		     				}
 		     				
-		     				if(!_keytest_optimized(RR_LEFT)) {left_and_right_pressed=0;}      		
+		     				if(!_keytest_optimized(RR_LEFT)) {left_and_right_pressed=0;}
        	}
 
 				if(_keytest_optimized(RR_LEFT)) {//Jump to the left
@@ -732,13 +735,13 @@ case 3: // Jump
 										mode=8;//Bumped
 	    	    				break;
 		     				}
-		     		nb=test_bg_map(16,0);//Ceiling test (normal case)		
+		     		nb=test_bg_map(16,0);//Ceiling test (normal case)
 		     				if (((prop[nb]==1) && (nb !=135))) {
 										mode=4;//Fall mode to avoid Ceiling
 										seq3--;
 	    	    				break;
 		     				}
-		     				if(!_keytest_optimized(RR_RIGHT)) {left_and_right_pressed=0;}        		
+		     				if(!_keytest_optimized(RR_RIGHT)) {left_and_right_pressed=0;}
        	}
 
 				if(_keytest_optimized(RR_LEFT)&&_keytest_optimized(RR_RIGHT) && left_and_right_pressed==0) {
@@ -764,7 +767,7 @@ case 3: // Jump
 										mode=8;//Bumped
 	    	    				break;
 		     				}
-		     		nb=test_bg_map(16,0);//Ceiling test (normal case)		
+		     		nb=test_bg_map(16,0);//Ceiling test (normal case)
 		     				if (((prop[nb]==1) && (nb !=135))) {
 										mode=4;//Fall mode to avoid Ceiling
 										seq3--;
@@ -899,7 +902,7 @@ case 4: // Falling
 									x_box_target=x_box+box_speed*10;
 								else
 									x_box_target=x_box-box_speed*10;
-						}	
+						}
   break;
   
 case 5: // pass through the floor
@@ -917,7 +920,7 @@ case 5: // pass through the floor
   	if (prop[nb] == 0) {
   	j=7;
   	seq3=0;
-  	mode=4;	
+  	mode=4;
   	}
   }
   break;
@@ -934,7 +937,6 @@ case 6: // Crawl
 			if ((_keytest_optimized(RR_RIGHT)&& !(_keytest_optimized(RR_LEFT)))||(((_keytest_optimized(RR_RIGHT)) && (_keytest_optimized(RR_LEFT))) && (left_and_right_pressed == 2))) {
 					reversed = 0;
 					j=enum_seq6[seq6];
-										
 					nb=test_bg_map(32,16);//Wall test
 		     	if (prop[nb]!=1) {
 		     		x_pos+=pas;
@@ -954,8 +956,7 @@ case 6: // Crawl
 			}
 			if ((_keytest_optimized(RR_LEFT)&& !(_keytest_optimized(RR_RIGHT)))||((_keytest_optimized(RR_RIGHT) && _keytest_optimized(RR_LEFT)) && (left_and_right_pressed==1))) {
 					j=enum_seq6[seq6];
-					reversed = 1;					
-					
+					reversed = 1;
 					nb=test_bg_map(0,16);//Wall test
 		     	if (prop[nb]!=1) {
 		     		x_pos-=pas;
@@ -1064,7 +1065,7 @@ case 10: //swimm
 				y_swimm_speed=0;//no move
 			}
 			nb=test_bg_map(16,-16);//Surface test
-			nb=bg_map[(y_bg/16)+((y_pos)/16)+1][(x_bg/16)+((x_pos+16)/16)];
+			//nb=bg_map[(y_bg/16)+((y_pos)/16)+1][(x_bg/16)+((x_pos+16)/16)];
 			if (((nb==226) || (nb==138))&& _keytest_optimized(RR_UP)){
 					swimm_mode =2;
 					y_swimm_speed=0;//no move
@@ -1082,13 +1083,13 @@ case 10: //swimm
 					y_swimm_speed=+2;
 					if (cpt%15<7)
 					j=41;
-			}			
+			}
 			if ((!_keytest_optimized(RR_UP)) && (!_keytest_optimized(RR_DOWN))) {
 					j=40;
 					swimm_mode=0;
 			}
 			nb=test_bg_map(16,-16);//Surface test
-			nb=bg_map[(y_bg/16)+((y_pos)/16)+1][(x_bg/16)+((x_pos+16)/16)];
+			//nb=bg_map[(y_bg/16)+((y_pos)/16)+1][(x_bg/16)+((x_pos+16)/16)];
 			if (!((nb==226) || (nb==138) || _keytest_optimized(RR_DOWN)))
 					y_swimm_speed=0;//no move
 			nb=test_bg_map(16,48);//Pre-floor test (for sprite n°12/40 change)
@@ -1235,13 +1236,14 @@ case 14://intro
     	for (n=0;n<35;n++) { // For each animated tile
 
 				if ((x_animated_tile_pos[n]*16>x_bg) && (x_animated_tile_pos[n]*16<x_bg+160+32) && (y_animated_tile_pos[n]*16>y_bg-16) && (y_animated_tile_pos[n]*16<y_bg+100)) { //if tile is visible
+						unsigned char value = 0;
 						switch (g_animated_tile_pos[n]) {
 						  case 1://Cameras
 						  s_animated_tile_pos[n]++;
 						  if (s_animated_tile_pos[n]==12) {//max seq is 12 for Camera
 						  	s_animated_tile_pos[n]=0;
 						  }
-							bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]]=seq_animated_tile_group1[(s_animated_tile_pos[n])];
+							value=seq_animated_tile_group1[(s_animated_tile_pos[n])];
 						  break;
 						  
 						  case 2://Right Axes
@@ -1249,7 +1251,7 @@ case 14://intro
 						  if (s_animated_tile_pos[n]==3) {//max seq is 3 for Axes
 						  	s_animated_tile_pos[n]=0;
 						  }
-							bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]]=seq_animated_tile_group2[(s_animated_tile_pos[n])];
+							value=seq_animated_tile_group2[(s_animated_tile_pos[n])];
 						  break;
 	
 							case 3://Left Axes
@@ -1257,15 +1259,15 @@ case 14://intro
 						  if (s_animated_tile_pos[n]==3) {//max seq is 3 for Axes
 						  	s_animated_tile_pos[n]=0;
 						  }
-							bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]]=seq_animated_tile_group3[(s_animated_tile_pos[n])];
-						  break;					  
+							value=seq_animated_tile_group3[(s_animated_tile_pos[n])];
+						  break;
 						  
 						  case 4://Flags
 						  s_animated_tile_pos[n]++;
 						  if (s_animated_tile_pos[n]==2) {//max seq is 2 for Flags
 						  	s_animated_tile_pos[n]=0;
 						  }
-							bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]]=seq_animated_tile_group4[(s_animated_tile_pos[n])];
+							value=seq_animated_tile_group4[(s_animated_tile_pos[n])];
 						  break;
 						  
 						  case 5://guitar
@@ -1274,7 +1276,7 @@ case 14://intro
 						  	s_animated_tile_pos[n]=0;
 						  }
 						  if (item!=1) {
-							bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]]=seq_animated_tile_group5[(s_animated_tile_pos[n])];
+							value=seq_animated_tile_group5[(s_animated_tile_pos[n])];
 						  }
 						  break;
 						  
@@ -1283,7 +1285,7 @@ case 14://intro
 						  if (s_animated_tile_pos[n]==3) {//max seq is 3 for moving walkways
 						  	s_animated_tile_pos[n]=0;
 						  }
-							bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]]=seq_animated_tile_group6[(s_animated_tile_pos[n])];
+							value=seq_animated_tile_group6[(s_animated_tile_pos[n])];
 						  break;
 
 						  case 7://Right moving walkways
@@ -1291,13 +1293,14 @@ case 14://intro
 						  if (s_animated_tile_pos[n]==3) {//max seq is 3 for moving walkways
 						  	s_animated_tile_pos[n]=0;
 						  }
-							bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]]=seq_animated_tile_group7[(s_animated_tile_pos[n])];
+							value=seq_animated_tile_group7[(s_animated_tile_pos[n])];
 						  break;
 						  
 						default:
 						}
+						bg_map[y_animated_tile_pos[n]][x_animated_tile_pos[n]] = value;
 				bg_plane.force_update=1;
-				}	  
+				}
 			}
   }
 
@@ -1341,7 +1344,7 @@ case 14://intro
 						  bg_map[(y_special_pos[n])/16][(x_special_pos[n]+8)/16]=20;
 						  bg_plane.force_update=1;
 						  for (m=0;m<50;m++) {
-						  		add_one_disk();						  	
+						  		add_one_disk();
 						  }
 						  c_special_pos[n]=0;
 						  break;
@@ -1410,23 +1413,23 @@ case 14://intro
   	//Y scrolling:
   	if (mode==4) { //case: falling
   			if ((y_bg<(16*(HAUT)))&&(y_pos>(48))) {
-					y_bg_target = ((y_bg/16)+2)*16;		
+					y_bg_target = ((y_bg/16)+2)*16;
 				}
 		}
 		else {
 				if ((y_bg<(16*(HAUT)))&&(y_pos>(72))) {
-					y_bg_target = ((y_bg/16)+1)*16;		
+					y_bg_target = ((y_bg/16)+1)*16;
 				}
 		}
 		
 		if (mode==11) {//case: fly with balloons
 				if((y_bg>16)&&(y_pos<8)) {
-					y_bg_target = ((y_bg/16)-4)*16;	
+					y_bg_target = ((y_bg/16)-4)*16;
 				}
 		}
 		else {
 				if((y_bg>16)&&(y_pos<8)) {
-					y_bg_target = ((y_bg/16)-2)*16;	
+					y_bg_target = ((y_bg/16)-2)*16;
 				}
 		}
 		if (y_bg_target > y_bg) {
@@ -1471,7 +1474,7 @@ case 14://intro
 		if (((immortal ==0) && (m_enemy[n]!=0) && (m_enemy[n]!=3) && (x_bg+x_pos >= x_enemy[n]-16) && (x_bg+x_pos <= x_enemy[n]+16) && (y_bg+y_pos >= y_enemy[n]-16) && (y_bg+y_pos <= y_enemy[n]+16) && (g_enemy[n]!=2)) \
 		      //bullet test (to the right)
      	|| ((immortal==0) && (m_enemy[n]!=0) && (m_enemy[n]!=3) && (m_enemy[n]==4) && (mode!=6) && (y_bg+y_pos >= y_enemy[n]-16) && (y_bg+y_pos <= y_enemy[n]) && (x_bg+x_pos >= x_enemy[n]-16+x_bullet[n]) && (x_bg+x_pos <= x_enemy[n]+16+x_bullet[n])) \
-		      //bullet test (to the left)		
+		      //bullet test (to the left)
     	|| ((immortal==0) && (m_enemy[n]!=0) && (m_enemy[n]!=3) && (m_enemy[n]==5) && (mode!=6) && (y_bg+y_pos >= y_enemy[n]-16) && (y_bg+y_pos <= y_enemy[n]) && (x_bg+x_pos >= x_enemy[n]-16-x_bullet[n]) && (x_bg+x_pos <= x_enemy[n]-x_bullet[n])) \
     	
     	|| ((immortal==0) && (y_bullet[n]!=0) && (y_bg+y_pos >= y_bullet[n]-16) && (y_bg+y_pos <= y_bullet[n]+16) && (x_bg+x_pos >= x_bullet[n]-16) && (x_bg+x_pos <= x_bullet[n]+16)))  {
@@ -1646,139 +1649,140 @@ case 14://intro
         
   	for (n=0;n<5;n++) { // Draw elevators
 				if ((x_elevator[n]>x_bg) && (x_elevator[n] <x_bg+160+32) && (y_elevator[n]>y_bg-16) && (y_elevator[n]<y_bg+100)) {
-				    GraySprite16_SMASK_R(x_elevator[n]-x_bg,y_elevator[n]-y_bg,16,p_array16[1]+22*16,p_array16[2]+22*16,p_array16[0]+22*16,vecran,vecran+LCD_SIZE);			    		    
+				    GraySprite16_SMASK_R(x_elevator[n]-x_bg,y_elevator[n]-y_bg,16,p_array16[1]+22*16,p_array16[2]+22*16,p_array16[0]+22*16,vecran,vecran+LCD_SIZE);
 					  GraySprite16_SMASK_R(x_elevator[n]-x_bg+16,y_elevator[n]-y_bg,16,p_array16[1]+23*16,p_array16[2]+23*16,p_array16[0]+23*16,vecran,vecran+LCD_SIZE);
-				}	  
+				}
 		}
 
   	for (n=0;n<nb_enemy;n++) { // Draw enemies
 				if ((m_enemy[n]!=0)&&(m_enemy[n]!=3)&&(x_enemy[n]>x_bg) && (x_enemy[n] <x_bg+160+32) && (y_enemy[n]>y_bg-32) && (y_enemy[n]<y_bg+100)) {//draw moving enemy
-					
+					short xcoord_=x_enemy[n]-x_bg;
+					short ycoord_=y_enemy[n]-y_bg;
 					switch (g_enemy[n]) {
 
 						case 1: //Draw Grandma
 						if (r_enemy[n]==0) {
-					    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+					    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 						}
-						if (r_enemy[n]==1) {
-					    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+						else if (r_enemy[n]==1) {
+					    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 						}
 						break;
 						case 2: //Draw Fish
 						if (r_enemy[n]==0) {
-					    GraySprite16_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,16,p_array16[1]+24*16,p_array16[2]+24*16,p_array16[0]+24*16,vecran,vecran+LCD_SIZE);
+					    GraySprite16_SMASK_R(xcoord_,ycoord_,16,p_array16[1]+24*16,p_array16[2]+24*16,p_array16[0]+24*16,vecran,vecran+LCD_SIZE);
 						}
-						if (r_enemy[n]==1) {
-					    GraySprite16_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,16,p_array16[4]+24*16,p_array16[5]+24*16,p_array16[3]+24*16,vecran,vecran+LCD_SIZE);
+						else if (r_enemy[n]==1) {
+					    GraySprite16_SMASK_R(xcoord_,ycoord_,16,p_array16[4]+24*16,p_array16[5]+24*16,p_array16[3]+24*16,vecran,vecran+LCD_SIZE);
 						}
 						break;
 						case 3: //Draw Cop
 						if ((m_enemy[n]==1) || (m_enemy[n]==2)){ //Cop is walking
 								if (r_enemy[n]==0) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy3[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy3[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
-								if (r_enemy[n]==1) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy3[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+								else if (r_enemy[n]==1) {
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy3[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy3[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
 						}
-						if ((m_enemy[n]==4)){ //cop is shooting to the right
+						else if ((m_enemy[n]==4)){ //cop is shooting to the right
 								if      (shooting[n]>=30)
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+6*32,p_array32[8]+6*32,p_array32[6]+6*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+6*32,p_array32[8]+6*32,p_array32[6]+6*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=25)
-							    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+7*32,p_array32[8]+7*32,p_array32[6]+7*32,vecran,vecran+LCD_SIZE);
+							    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+7*32,p_array32[8]+7*32,p_array32[6]+7*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=15)
-									    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+8*32,p_array32[8]+8*32,p_array32[6]+8*32,vecran,vecran+LCD_SIZE);
+									    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+8*32,p_array32[8]+8*32,p_array32[6]+8*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=10)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+7*32,p_array32[8]+7*32,p_array32[6]+7*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+7*32,p_array32[8]+7*32,p_array32[6]+7*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=2)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+6*32,p_array32[8]+6*32,p_array32[6]+6*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+6*32,p_array32[8]+6*32,p_array32[6]+6*32,vecran,vecran+LCD_SIZE);
 							//Draw bullet
 							if ((shooting[n]<=20) && ((x_enemy[n]+x_bullet[n])>x_bg) && ((x_enemy[n]+x_bullet[n]) <x_bg+160+32))
-								GraySprite16_SMASK_R(x_enemy[n]-x_bg+x_bullet[n],y_enemy[n]-y_bg+8,16,p_array16[4]+21*16,p_array16[5]+21*16,p_array16[3]+21*16,vecran,vecran+LCD_SIZE);
+								GraySprite16_SMASK_R(xcoord_+x_bullet[n],ycoord_+8,16,p_array16[4]+21*16,p_array16[5]+21*16,p_array16[3]+21*16,vecran,vecran+LCD_SIZE);
 						}
-						if ((m_enemy[n]==5)){ //cop is shooting to the left
+						else if ((m_enemy[n]==5)){ //cop is shooting to the left
 								if      (shooting[n]>=30)
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+6*32,p_array32[11]+6*32,p_array32[9]+6*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+6*32,p_array32[11]+6*32,p_array32[9]+6*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=25)
-							    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+7*32,p_array32[11]+7*32,p_array32[9]+7*32,vecran,vecran+LCD_SIZE);
+							    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+7*32,p_array32[11]+7*32,p_array32[9]+7*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=15)
-									    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+8*32,p_array32[11]+8*32,p_array32[9]+8*32,vecran,vecran+LCD_SIZE);
+									    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+8*32,p_array32[11]+8*32,p_array32[9]+8*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=10)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+7*32,p_array32[11]+7*32,p_array32[9]+7*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+7*32,p_array32[11]+7*32,p_array32[9]+7*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=2)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+6*32,p_array32[11]+6*32,p_array32[9]+6*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+6*32,p_array32[11]+6*32,p_array32[9]+6*32,vecran,vecran+LCD_SIZE);
 							//Draw bullet
 							if ((shooting[n]<=20) && ((x_enemy[n]-x_bullet[n]+16)>x_bg) && ((x_enemy[n]-x_bullet[n]+16) <x_bg+160+32))
-								GraySprite16_SMASK_R(x_enemy[n]-x_bg-x_bullet[n]+16,y_enemy[n]-y_bg+8,16,p_array16[4]+22*16,p_array16[5]+22*16,p_array16[3]+22*16,vecran,vecran+LCD_SIZE);
+								GraySprite16_SMASK_R(xcoord_-x_bullet[n]+16,ycoord_+8,16,p_array16[4]+22*16,p_array16[5]+22*16,p_array16[3]+22*16,vecran,vecran+LCD_SIZE);
 						}
 						break;	
 						case 4: //Draw Woman
 						if ((m_enemy[n]==1) || (m_enemy[n]==2)){ //Woman is walking
 								if (r_enemy[n]==0) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy4[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy4[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
-								if (r_enemy[n]==1) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy4[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+								else if (r_enemy[n]==1) {
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy4[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy4[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
 						}
-						if ((m_enemy[n]==4)){ //Woman is shooting to the right
+						else if ((m_enemy[n]==4)){ //Woman is shooting to the right
 								if      (shooting[n]>=30)
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+28*32,p_array32[8]+28*32,p_array32[6]+28*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+28*32,p_array32[8]+28*32,p_array32[6]+28*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=25)
-							    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+29*32,p_array32[8]+29*32,p_array32[6]+29*32,vecran,vecran+LCD_SIZE);
+							    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+29*32,p_array32[8]+29*32,p_array32[6]+29*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=15)
-									    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+30*32,p_array32[8]+30*32,p_array32[6]+30*32,vecran,vecran+LCD_SIZE);
+									    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+30*32,p_array32[8]+30*32,p_array32[6]+30*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=10)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+31*32,p_array32[8]+31*32,p_array32[6]+31*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+31*32,p_array32[8]+31*32,p_array32[6]+31*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=2)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+31*32,p_array32[8]+31*32,p_array32[6]+31*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+31*32,p_array32[8]+31*32,p_array32[6]+31*32,vecran,vecran+LCD_SIZE);
 							//Draw plate
 							if ((shooting[n]<=20) && ((x_enemy[n]+x_bullet[n])>x_bg) && ((x_enemy[n]+x_bullet[n]) <x_bg+160+32))
-								GraySprite16_SMASK_R(x_enemy[n]-x_bg+x_bullet[n],y_enemy[n]-y_bg+8,16,p_array16[1]+21*16,p_array16[2]+21*16,p_array16[0]+21*16,vecran,vecran+LCD_SIZE);
+								GraySprite16_SMASK_R(xcoord_+x_bullet[n],ycoord_+8,16,p_array16[1]+21*16,p_array16[2]+21*16,p_array16[0]+21*16,vecran,vecran+LCD_SIZE);
 						}
-						if ((m_enemy[n]==5)){ //Woman is shooting to the left
+						else if ((m_enemy[n]==5)){ //Woman is shooting to the left
 								if      (shooting[n]>=30)
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+28*32,p_array32[11]+28*32,p_array32[9]+28*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+28*32,p_array32[11]+28*32,p_array32[9]+28*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=25)
-							    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+29*32,p_array32[11]+29*32,p_array32[9]+29*32,vecran,vecran+LCD_SIZE);
+							    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+29*32,p_array32[11]+29*32,p_array32[9]+29*32,vecran,vecran+LCD_SIZE);
 							  else if (shooting[n]>=15)
-									    		GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+30*32,p_array32[11]+30*32,p_array32[9]+30*32,vecran,vecran+LCD_SIZE);
+									    		GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+30*32,p_array32[11]+30*32,p_array32[9]+30*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=10)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+31*32,p_array32[11]+31*32,p_array32[9]+31*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+31*32,p_array32[11]+31*32,p_array32[9]+31*32,vecran,vecran+LCD_SIZE);
 								else if (shooting[n]>=2)
-									    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+31*32,p_array32[11]+31*32,p_array32[9]+31*32,vecran,vecran+LCD_SIZE);
+									    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+31*32,p_array32[11]+31*32,p_array32[9]+31*32,vecran,vecran+LCD_SIZE);
 							//Draw plate
 							if ((shooting[n]<=20) && ((x_enemy[n]-x_bullet[n]+16)>x_bg) && ((x_enemy[n]-x_bullet[n]+16) <x_bg+160+32))
-								GraySprite16_SMASK_R(x_enemy[n]-x_bg-x_bullet[n]+16,y_enemy[n]-y_bg+8,16,p_array16[1]+21*16,p_array16[2]+21*16,p_array16[0]+21*16,vecran,vecran+LCD_SIZE);
+								GraySprite16_SMASK_R(xcoord_-x_bullet[n]+16,ycoord_+8,16,p_array16[1]+21*16,p_array16[2]+21*16,p_array16[0]+21*16,vecran,vecran+LCD_SIZE);
 						}
 						break;
 						case 5://Draw Junky
 						if ((m_enemy[n]==1) || (m_enemy[n]==2)){ //Junky is walking
 								if (r_enemy[n]==0) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy5[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy5[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
-								if (r_enemy[n]==1) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy5[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+								else if (r_enemy[n]==1) {
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy5[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy5[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
 						}
 						break;
 						case 6://Draw Farmer
 						if ((m_enemy[n]==1) || (m_enemy[n]==2)){ //Farmer is walking
 								if (r_enemy[n]==0) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy6[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy6[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
-								if (r_enemy[n]==1) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy6[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+								else if (r_enemy[n]==1) {
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy6[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy6[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
 						}
 						break;
 						case 7://Draw Bird
 						if (m_enemy[n]!=0){ //Bird is flying
 								if (r_enemy[n]==0) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[7]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy7[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[7]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[8]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[6]+(enum_seq_enemy7[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
-								if (r_enemy[n]==1) {
-							    GraySprite32_SMASK_R(x_enemy[n]-x_bg,y_enemy[n]-y_bg,32,p_array32[10]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy7[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
+								else if (r_enemy[n]==1) {
+							    GraySprite32_SMASK_R(xcoord_,ycoord_,32,p_array32[10]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[11]+(enum_seq_enemy7[seq_enemy[n]])*32,p_array32[9]+(enum_seq_enemy7[seq_enemy[n]])*32,vecran,vecran+LCD_SIZE);
 								}
 						}
 						//Draw Egg
@@ -1813,88 +1817,79 @@ short x_offset=0;//sprite offset
 if ((immortal%4==0)||(immortal%4==1)||(mode==8)) {// Draw character
 		if (reversed){// Character (looking to the left)
 				if (j==31) {//add tile32 n°42 on the top of tile32 n°31
-				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[4]+42*32,p_array32[5]+42*32,p_array32[3]+42*32,vecran,vecran+LCD_SIZE);	
+				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[4]+42*32,p_array32[5]+42*32,p_array32[3]+42*32,vecran,vecran+LCD_SIZE);
 				}
-				if (j==32) {//add tile32 n°43 on the top of tile32 n°32
-				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[4]+43*32,p_array32[5]+43*32,p_array32[3]+43*32,vecran,vecran+LCD_SIZE);	
+				else if (j==32) {//add tile32 n°43 on the top of tile32 n°32
+				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[4]+43*32,p_array32[5]+43*32,p_array32[3]+43*32,vecran,vecran+LCD_SIZE);
 				}
-				if (j==19) {//add tile16 n°00 on the top (left) of tile32 n°19
+				else if (j==19) {//add tile16 n°00 on the top (left) of tile32 n°19
 				GraySprite16_SMASK_R(x_pos,y_pos-16,16,p_array16[4]+0*16,p_array16[5]+0*16,p_array16[3]+0*16,vecran,vecran+LCD_SIZE);
-				}
-				if (j==19) {//add tile16 n°01 on the top (right) of tile32 n°19
+				            //add tile16 n°01 on the top (right) of tile32 n°19
 				GraySprite16_SMASK_R(x_pos+16,y_pos-16,16,p_array16[4]+1*16,p_array16[5]+1*16,p_array16[3]+1*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==30) {//add tile16 n°02 on the top (left) of tile32 n°30
+				else if (j==30) {//add tile16 n°02 on the top (left) of tile32 n°30
 				GraySprite16_SMASK_R(x_pos,y_pos-16,16,p_array16[4]+2*16,p_array16[5]+2*16,p_array16[3]+2*16,vecran,vecran+LCD_SIZE);
-				}
-				if (j==30) {//add tile16 n°03 on the top (right) of tile32 n°30
+				            //add tile16 n°03 on the top (right) of tile32 n°30
 				GraySprite16_SMASK_R(x_pos+16,y_pos-16,16,p_array16[4]+3*16,p_array16[5]+3*16,p_array16[3]+3*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==12) {//add tile16 n°04 on the right of tile32 n°12[was 45]
+				else if (j==12) {//add tile16 n°04 on the right of tile32 n°12[was 45]
 				GraySprite16_SMASK_R(x_pos+32,y_pos+4+8,16,p_array16[4]+4*16,p_array16[5]+4*16,p_array16[3]+4*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==16) {//add tile16 n°05 on the right of tile32 n°16[was 46]
+				else if (j==16) {//add tile16 n°05 on the right of tile32 n°16[was 46]
 				GraySprite16_SMASK_R(x_pos+32,y_pos+16-1,16,p_array16[4]+5*16,p_array16[5]+5*16,p_array16[3]+5*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==18) {//add tile16 n°06 on the right of tile32 n°18[was 47]
+				else if (j==18) {//add tile16 n°06 on the right of tile32 n°18[was 47]
 				GraySprite16_SMASK_R(x_pos+32,y_pos+10,16,p_array16[4]+6*16,p_array16[5]+6*16,p_array16[3]+6*16,vecran,vecran+LCD_SIZE);
-				}
-				if (j==18) {//add tile16 n°07 on the left of tile32 n°18[was 47]
+				            //add tile16 n°07 on the left of tile32 n°18[was 47]
 				GraySprite16_SMASK_R(x_pos+32,y_pos+10+16,16,p_array16[4]+7*16,p_array16[5]+7*16,p_array16[3]+7*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==40) {//add tile16 n°08 on the left of tile32 n°40[was 48]
+				else if (j==40) {//add tile16 n°08 on the left of tile32 n°40[was 48]
 				GraySprite16_SMASK_R(x_pos+32,y_pos+16,16,p_array16[4]+8*16,p_array16[5]+8*16,p_array16[3]+8*16,vecran,vecran+LCD_SIZE);
 				}
-				if ((j==39)&&(mode==11)) {//add tile16 n°11 on the left of tile32 n°39
+				else if ((j==39)&&(mode==11)) {//add tile16 n°11 on the left of tile32 n°39
 				GraySprite16_SMASK_R(x_pos+8,y_pos-16-8,16,p_array16[4]+11*16,p_array16[5]+11*16,p_array16[3]+11*16,vecran,vecran+LCD_SIZE);
-				}
-				if ((j==39)&&(mode==11)) {//add tile16 n°12 on the left of tile32 n°39
+				                          //add tile16 n°12 on the left of tile32 n°39
 				GraySprite16_SMASK_R(x_pos+8,y_pos-8,16,p_array16[4]+12*16,p_array16[5]+12*16,p_array16[3]+12*16,vecran,vecran+LCD_SIZE);
 				}
 				GraySprite32_SMASK_R(x_pos+x_offset,y_pos,32,p_array32[4]+j*32,p_array32[5]+j*32,p_array32[3]+j*32,vecran,vecran+LCD_SIZE);//Draw character
 		}
 		else {// Character (looking to the right)
-				
 				if (j==31) {//add tile 42 on the top
-				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[1]+42*32,p_array32[2]+42*32,p_array32[0]+42*32,vecran,vecran+LCD_SIZE);	
+				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[1]+42*32,p_array32[2]+42*32,p_array32[0]+42*32,vecran,vecran+LCD_SIZE);
 				}
-				if (j==32) {//add tile 43 on the top
-				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[1]+43*32,p_array32[2]+43*32,p_array32[0]+43*32,vecran,vecran+LCD_SIZE);	
+				else if (j==32) {//add tile 43 on the top
+				GraySprite32_SMASK_R(x_pos,y_pos-32,32,p_array32[1]+43*32,p_array32[2]+43*32,p_array32[0]+43*32,vecran,vecran+LCD_SIZE);
 				}
-				if (j==19) {//add tile16 n°00 on the top (left) of tile32 n°19
+				else if (j==19) {//add tile16 n°00 on the top (left) of tile32 n°19
 				GraySprite16_SMASK_R(x_pos,y_pos-16,16,p_array16[1]+0*16,p_array16[2]+0*16,p_array16[0]+0*16,vecran,vecran+LCD_SIZE);
-				}
-				if (j==19) {//add tile16 n°01 on the top (right) of tile32 n°19
+				            //add tile16 n°01 on the top (right) of tile32 n°19
 				GraySprite16_SMASK_R(x_pos+16,y_pos-16,16,p_array16[1]+1*16,p_array16[2]+1*16,p_array16[0]+1*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==30) {//add tile16 n°02 on the top (left) of tile32 n°30
+				else if (j==30) {//add tile16 n°02 on the top (left) of tile32 n°30
 				GraySprite16_SMASK_R(x_pos,y_pos-16,16,p_array16[1]+2*16,p_array16[2]+2*16,p_array16[0]+2*16,vecran,vecran+LCD_SIZE);
-				}
-				if (j==30) {//add tile16 n°03 on the top (right) of tile32 n°30
+				            //add tile16 n°03 on the top (right) of tile32 n°30
 				GraySprite16_SMASK_R(x_pos+16,y_pos-16,16,p_array16[1]+3*16,p_array16[2]+3*16,p_array16[0]+3*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==12) {//add tile16 n°04 on the left of tile32 n°12[was 45]
+				else if (j==12) {//add tile16 n°04 on the left of tile32 n°12[was 45]
 				GraySprite16_SMASK_R(x_pos-16,y_pos+4+8,16,p_array16[1]+4*16,p_array16[2]+4*16,p_array16[0]+4*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==16) {//add tile16 n°05 on the left of tile32 n°16[was 46]
+				else if (j==16) {//add tile16 n°05 on the left of tile32 n°16[was 46]
 				GraySprite16_SMASK_R(x_pos-16,y_pos+16-1,16,p_array16[1]+5*16,p_array16[2]+5*16,p_array16[0]+5*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==18) {//add tile16 n°06 on the left of tile32 n°18[was 47]
+				else if (j==18) {//add tile16 n°06 on the left of tile32 n°18[was 47]
 				GraySprite16_SMASK_R(x_pos-16,y_pos+10,16,p_array16[1]+6*16,p_array16[2]+6*16,p_array16[0]+6*16,vecran,vecran+LCD_SIZE);
-				}
-				if (j==18) {//add tile16 n°07 on the left of tile32 n°18[was 47]
+				            //add tile16 n°07 on the left of tile32 n°18[was 47]
 				GraySprite16_SMASK_R(x_pos-16,y_pos+10+16,16,p_array16[1]+7*16,p_array16[2]+7*16,p_array16[0]+7*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==40) {//add tile16 n°08 on the left of tile32 n°40[was 48]
+				else if (j==40) {//add tile16 n°08 on the left of tile32 n°40[was 48]
 				GraySprite16_SMASK_R(x_pos-16,y_pos+16,16,p_array16[1]+8*16,p_array16[2]+8*16,p_array16[0]+8*16,vecran,vecran+LCD_SIZE);
 				}
-				if ((j==39)&&(mode==11)) {//add tile16 n°11 on the left of tile32 n°39 (balloon)
+				else if ((j==39)&&(mode==11)) {//add tile16 n°11 on the left of tile32 n°39 (balloon)
 				GraySprite16_SMASK_R(x_pos+8,y_pos-16-8,16,p_array16[1]+11*16,p_array16[2]+11*16,p_array16[0]+11*16,vecran,vecran+LCD_SIZE);
-				}
-				if ((j==39)&&(mode==11)) {//add tile16 n°12 on the left of tile32 n°39 (balloon)
+				                          //add tile16 n°12 on the left of tile32 n°39 (balloon)
 				GraySprite16_SMASK_R(x_pos+8,y_pos-8,16,p_array16[1]+12*16,p_array16[2]+12*16,p_array16[0]+12*16,vecran,vecran+LCD_SIZE);
 				}
-				if (j==41)
+				else if (j==41)
 					x_offset=-6;
 				GraySprite32_SMASK_R(x_pos+x_offset,y_pos,32,p_array32[1]+j*32,p_array32[2]+j*32,p_array32[0]+j*32,vecran,vecran+LCD_SIZE);//Draw character
 		}
@@ -1943,9 +1938,9 @@ for (n=0;n<5;n++) {
 if (vie >n)
 	GraySprite16_SMASK_R(((16*(7+n))+8)-(2*n),90,16,p_array16[4]+26*16,p_array16[5]+26*16,p_array16[3]+26*16,vecran,vecran+LCD_SIZE);
 else
-	GraySprite16_SMASK_R(((16*(7+n))+8)-(2*n),90,16,p_array16[4]+25*16,p_array16[5]+25*16,p_array16[3]+25*16,vecran,vecran+LCD_SIZE);	 	
+	GraySprite16_SMASK_R(((16*(7+n))+8)-(2*n),90,16,p_array16[4]+25*16,p_array16[5]+25*16,p_array16[3]+25*16,vecran,vecran+LCD_SIZE);
 }
-for (n=0;n<slowdown;n++) {//repeat "slowdown" times to slow the game down	
+for (n=0;n<slowdown;n++) {//repeat "slowdown" times to slow the game down
 		sprintf(info1,"0%hi",biglife);
 		sprintf(info2,"%hi%hi",disque_d,disque_u);
 		GrayDrawStr2B(16*3+8,92,info1,A_NORMAL ,vecran,vecran+LCD_SIZE);//Draw Continue number
@@ -1954,7 +1949,6 @@ for (n=0;n<slowdown;n++) {//repeat "slowdown" times to slow the game down
 			sprintf(info1,"Slow%hi",slowdown);
 			GrayDrawStr2B(16*3+8+14,92,info1,A_NORMAL ,vecran,vecran+LCD_SIZE);//Draw Slowdown value
 		}
-		
 }
 
 if ((item==1) || ((blink_item>0) && (cpt%3==0)))
@@ -1995,7 +1989,7 @@ if ((item==1) || ((blink_item>0) && (cpt%3==0)))
 				GraySprite32_SMASK_R(32*2,32*1,32,p_array32[1]+25*32,p_array32[2]+25*32,p_array32[0]+25*32,vecran,vecran+LCD_SIZE);
 				GraySprite32_SMASK_R(32*3,32*1,32,p_array32[1]+26*32,p_array32[2]+26*32,p_array32[0]+26*32,vecran,vecran+LCD_SIZE);
 				GraySprite32_SMASK_R(32*4,32*1,32,p_array32[4]+20*32,p_array32[5]+20*32,p_array32[3]+20*32,vecran,vecran+LCD_SIZE);
-				GraySprite32_SMASK_R(32*5,32*1,32,p_array32[4]+21*32,p_array32[5]+21*32,p_array32[3]+21*32,vecran,vecran+LCD_SIZE);		
+				GraySprite32_SMASK_R(32*5,32*1,32,p_array32[4]+21*32,p_array32[5]+21*32,p_array32[3]+21*32,vecran,vecran+LCD_SIZE);
 		}
 
     FastCopyScreen_R(vecran+64,GrayGetPlane(LIGHT_PLANE));//From virtual to real screen with 32 pixels horizontal shift (light plane)
@@ -2004,7 +1998,7 @@ if ((item==1) || ((blink_item>0) && (cpt%3==0)))
 return 0;
 }
 
-unsigned char* GetPointerToFile(char* fname, HANDLE* h) { //returns pointer to start of external variable which name is given by fname
+static unsigned char* GetPointerToFile(const char* fname, HANDLE* h) { //returns pointer to start of external variable which name is given by fname
 																    SYM_ENTRY*     symptr;
 																    unsigned char* src;
 																
@@ -2019,7 +2013,7 @@ unsigned char* GetPointerToFile(char* fname, HANDLE* h) { //returns pointer to s
 																    }
 }
 
-unsigned char* GetDecompressedData(char* fname) {// decompresses an external variable and returns an allocated buffer
+static unsigned char* GetDecompressedData(const char* fname) {// decompresses an external variable and returns an allocated buffer
 																    HANDLE         h;
 																    unsigned char* src = GetPointerToFile(fname,&h);
 																    unsigned char* dest;
@@ -2058,12 +2052,12 @@ void _main(void)
   LCD_BUFFER backbuffer;
   LCD_save(backbuffer);
   														HANDLE         h;
-  														char nomfich[8]="level01";
+  														static const char nomfich[8]="level01";
 															unsigned char* src = GetPointerToFile(nomfich,&h);
 															
 															if (!src) {
 															    ST_helpMsg("level01 variable not found [exit]");
-															            ngetchx();		
+															            ngetchx();
 															    return;
 															}
 															else {
@@ -2081,7 +2075,7 @@ void _main(void)
 																			        else {
 																			                   // out of memory!!
 																			              ST_helpMsg("out of memory");
-																	            			ngetchx();		
+																	            			ngetchx();
 																			        }
 																			    }
 																			    
@@ -2097,11 +2091,10 @@ void _main(void)
 																								          else {
 																								                   // out of memory!!
 																								                   ST_helpMsg("out of memory");
-																						            			ngetchx();	
+																						            			ngetchx();
 																								          }
 																						       }
 															           	}
-															           																			    
 															           	for (i=0;i<6;i++) {//decomp masked 16x
 															           		
 																	           	unsigned char* pointer_to_entry = ttarchive_data(src,i+13);
@@ -2114,7 +2107,7 @@ void _main(void)
 																								          else {
 																								                   // out of memory!!
 																								                   ST_helpMsg("out of memory");
-																						            			ngetchx();	
+																						            			ngetchx();
 																								          }
 																						       }
 															           	}
